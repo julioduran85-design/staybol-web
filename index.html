@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0e0e0e" />
+<title>StayBol · Premium Apartments in Santa Cruz, Bolivia</title>
+<meta name="description" content="Curated short-stay apartments in Equipetrol, Santa Cruz de la Sierra. Superhost · 4.99★ · Pool & Views." />
+<meta property="og:title" content="StayBol · Premium Apartments in Santa Cruz" />
+<meta property="og:description" content="Curated short-stay apartments in Equipetrol, Santa Cruz de la Sierra." />
+<meta property="og:image" content="/vertical13f/img/hero.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f1ec;
+    --ink: #111110;
+    --ink-soft: #5c5851;
+    --muted: #9a948a;
+    --accent: #c7a668;
+    --line: rgba(17,17,16,0.08);
+    --dark: #0e0e0e;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+  .header-tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center;
+    padding: 80px 24px 64px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .hero p {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── BADGES ── */
+  .badges {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 6px 14px;
+  }
+  .badge svg { width: 13px; height: 13px; color: var(--accent); }
+
+  /* ── PROPERTIES ── */
+  .properties {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+  .card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  }
+  .card-img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    display: block;
+  }
+  .card-img-placeholder {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .card-body {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-floor {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .card-title {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .card-desc {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+  .card-features {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .feature-pill {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    background: var(--bg);
+    border-radius: 100px;
+    padding: 5px 12px;
+  }
+  .card-actions {
+    display: flex;
+    gap: 10px;
+  }
+  .btn-primary {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--dark);
+    color: white;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 13px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: transparent;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 13px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    text-decoration: none;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .btn-secondary:hover { border-color: var(--ink-soft); color: var(--ink); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 960px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+  }
+  .divider-line { flex: 1; height: 1px; background: var(--line); }
+  .divider-text {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: gap;
+    gap: 16px;
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .footer-logo span { color: var(--accent); }
+  .footer-text {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  .footer-wa {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-wa:hover { color: #25D366; }
+
+  @media (max-width: 600px) {
+    header { padding: 20px 20px; }
+    .header-tag { display: none; }
+    .hero { padding: 48px 20px 40px; }
+    .card-body { padding: 20px; }
+    footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/">Stay<span>Bol</span></a>
+  <span class="header-tag">Equipetrol · Santa Cruz, Bolivia</span>
+</header>
+
+<section class="hero">
+  <p class="hero-eyebrow">Hosted by Julio César</p>
+  <h1>Premium apartments<br>in the heart of the city</h1>
+  <p>Carefully curated stays in Equipetrol — Santa Cruz's most sought-after neighborhood. Pool access, panoramic views, and a Superhost at your service.</p>
+  <div class="badges">
+    <span class="badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      4.99 Rating
+    </span>
+    <span class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Superhost
+    </span>
+    <span class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Self check-in
+    </span>
+    <span class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      Pool access
+    </span>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-text">Our properties</span>
+  <div class="divider-line"></div>
+</div>
+
+<div class="properties">
+
+  <!-- Vertical 13F -->
+  <div class="card">
+    <img class="card-img" src="/vertical13f/img/hero.webp" alt="Vertical 13F apartment view" loading="eager" />
+    <div class="card-body">
+      <p class="card-floor">Vertical 60 · Floor 13</p>
+      <h2 class="card-title">Vertical 13F</h2>
+      <p class="card-desc">Panoramic city views from the 13th floor. Modern 1-bedroom with full kitchen, gym and pool access in the Vertical 60 tower — Equipetrol's landmark.</p>
+      <div class="card-features">
+        <span class="feature-pill">🏊 Pool</span>
+        <span class="feature-pill">🏋️ Gym</span>
+        <span class="feature-pill">🌆 City view</span>
+        <span class="feature-pill">👥 3 guests</span>
+        <span class="feature-pill">⭐ 4.99</span>
+      </div>
+      <div class="card-actions">
+        <a class="btn-primary" href="/vertical13f">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          Guest Guide
+        </a>
+        <a class="btn-secondary" href="https://airbnb.com.bo/h/vertical13f" target="_blank" rel="noopener">
+          Airbnb →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Baruc 26 -->
+  <div class="card">
+    <div class="card-img-placeholder">
+      <span>Baruc 26 · Coming soon</span>
+    </div>
+    <div class="card-body">
+      <p class="card-floor">Baruc 3 · Floor 5</p>
+      <h2 class="card-title">Baruc 26</h2>
+      <p class="card-desc">Rooftop pool with open-sky views on the 5th floor. Bright and airy apartment in Equipetrol with everything you need for a perfect stay.</p>
+      <div class="card-features">
+        <span class="feature-pill">🏊 Rooftop pool</span>
+        <span class="feature-pill">🌤️ Open sky</span>
+        <span class="feature-pill">📍 Equipetrol</span>
+      </div>
+      <div class="card-actions">
+        <a class="btn-primary" href="/baruc26" style="opacity:0.4;pointer-events:none;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          Guide coming soon
+        </a>
+        <a class="btn-secondary" href="https://airbnb.com/h/baruc26" target="_blank" rel="noopener">
+          Airbnb →
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <a class="footer-logo" href="/">Stay<span>Bol</span></a>
+  <p class="footer-text">Equipetrol · Santa Cruz de la Sierra, Bolivia</p>
+  <a class="footer-wa" href="https://wa.me/59176543210" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</footer>
+
+</body>
+</html>
